@@ -44,5 +44,4 @@ class Heap {
   }
 }
 
-const heap = new Heap(inputArray);
-console.log(heap.sort());
+console.log(new Heap(inputArray).sort());
