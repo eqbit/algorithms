@@ -3,6 +3,10 @@ const inputArray = [3, 7, 1, 8, 4, 6, 5, 2, 0, 9, 10, 123, -2, 233, 2, 233, 21, 
 class Heap {
   constructor(inputArray) {
     this.inputArray = inputArray;
+  
+    for (let i = Math.floor(this.inputArray.length / 2) - 1; i >= 0; i--) {
+      this.heapify(i);
+    }
   }
   
   swap(index1, index2) {
@@ -31,20 +35,14 @@ class Heap {
   }
   
   sort() {
-    for (let i = Math.floor(this.inputArray.length / 2) - 1; i >= 0; i--) {
-      this.heapify(i);
-    }
-  
-    console.log(this.inputArray);
-    
     for (let i = this.inputArray.length - 1; i > 0; i--) {
       this.swap(i, 0);
       this.heapify(0, i);
     }
-  
-    console.log(this.inputArray);
+    
+    return this.inputArray;
   }
 }
 
 const heap = new Heap(inputArray);
-heap.sort();
+console.log(heap.sort());
