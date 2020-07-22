@@ -42,8 +42,10 @@ class MultiValueDictionary {
         if (index === entries.length - 1) {
           return { done: true };
         }
+        
         index++;
         const [key, value] = entries[index];
+        
         return { value: { key, value } };
       }
     }
